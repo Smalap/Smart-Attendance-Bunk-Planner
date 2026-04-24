@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Attendance & Bunk Planner</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo-area">
+                <span class="logo-icon">📊</span>
+                <h1>Smart Attendance & Bunk Planner</h1>
+            </div>
+            <p class="tagline">Never lose exam eligibility again — track, plan, and stay above 75%</p>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTAINER ===== -->
+    <main class="container">
+
+        <!-- SECTION 1: Add Subject Form -->
+        <section class="card add-subject-card">
+            <h2 class="card-title">Add a Subject</h2>
+            <div class="form-row">
+                <!-- Subject name input -->
+                <div class="form-group">
+                    <label for="subject-name">Subject Name</label>
+                    <input type="text" id="subject-name" placeholder="e.g. Digital Signal Processing" autocomplete="off">
+                </div>
+                <!-- Total lectures conducted -->
+                <div class="form-group">
+                    <label for="total-lectures">Total Lectures</label>
+                    <input type="number" id="total-lectures" placeholder="e.g. 40" min="0">
+                </div>
+                <!-- Lectures attended -->
+                <div class="form-group">
+                    <label for="attended-lectures">Attended</label>
+                    <input type="number" id="attended-lectures" placeholder="e.g. 32" min="0">
+                </div>
+            </div>
+            <!-- Action buttons -->
+            <div class="form-actions">
+                <button id="add-subject-btn" class="btn btn-primary" onclick="addSubject()">+ Add Subject</button>
+                <button id="clear-all-btn" class="btn btn-outline" onclick="clearAll()">Clear All</button>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Overall Aggregate Summary (hidden until subjects are added) -->
+        <section class="card aggregate-card" id="aggregate-section" style="display: none;">
+            <h2 class="card-title">Overall Aggregate</h2>
+            <div class="aggregate-stats">
+                <div class="stat-box">
+                    <span class="stat-label">Total Lectures</span>
+                    <span class="stat-value" id="agg-total">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Attended</span>
+                    <span class="stat-value" id="agg-attended">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Aggregate %</span>
+                    <span class="stat-value" id="agg-percent">0%</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Status</span>
+                    <span class="stat-value" id="agg-status">—</span>
+                </div>
+            </div>
+            <!-- Aggregate progress bar -->
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="agg-progress-bar">
+                    <span class="progress-text" id="agg-progress-text">0%</span>
+                </div>
+                <!-- 75% threshold marker -->
+                <div class="threshold-marker" title="75% minimum required"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Subject-wise Cards (dynamically added by JS) -->
+        <section id="subjects-container"></section>
+
+        <!-- SECTION 4: Empty state message -->
+        <section class="card empty-state" id="empty-state">
+            <div class="empty-icon">📚</div>
+            <h3>No subjects added yet</h3>
+            <p>Add your first subject above to start tracking attendance.</p>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="app-footer">
+        <p>Built by <strong>Shivam Malap</strong> · Electronics & Telecommunication Engineering</p>
+    </footer>
+
+    <!-- Link to external JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
