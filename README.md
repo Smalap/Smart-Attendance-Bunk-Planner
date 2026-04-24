@@ -92,7 +92,7 @@ Smart-Attendance-Bunk-Planner/
  (<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1ed21eb5-6511-4fae-a2d9-ed514e149702" />
  
 
-> _Replace placeholders above with actual screenshots of your running application._
+
 
 ---
 
